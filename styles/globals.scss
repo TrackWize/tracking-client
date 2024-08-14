@@ -1,0 +1,10 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply box-border p-0 m-0 text-sm sm:text-base;
+}
+
+
