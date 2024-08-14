@@ -12,7 +12,6 @@ export function useDictionary<T extends keyof PagesDictionary>(
   useEffect(() => {
     if (!navigator.language) return;
     setLanguage(navigator.language.split("-")[0] as any);
-    console.log(navigator.language)
   }, []);
 
   useEffect(() => {
