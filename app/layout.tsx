@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.scss";
-import { Layout } from "@/components";
+import { Header, Layout } from "@/components";
+import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -8,16 +9,16 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  auth,
-  unauth,
+  children,
 }: Readonly<{
   children: React.ReactNode;
-  auth: React.ReactNode;
-  unauth: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <Layout>{unauth}</Layout>
+      <Layout>
+        <Header />
+        <main>{children}</main>
+      </Layout>
     </html>
   );
 }

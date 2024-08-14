@@ -1,3 +1,9 @@
+import { Button } from "../Button";
+
 export function Header() {
-  return <div className="w-full flex justify-between bg-slate-300">Hello World</div>
+  return (
+    <header className="w-full flex items-center justify-between p-4">
+      <h4 className="text-blue-600 font-extrabold">tracking</h4>
+    </header>
+  );
 }
