@@ -1,3 +1,5 @@
+import { Button } from "@/components";
+
 export default function Page() {
-  return <h1>Hello World</h1>
+  return <Button>Hello</Button>
 }
