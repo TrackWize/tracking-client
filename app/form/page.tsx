@@ -16,15 +16,25 @@ export default function Page() {
       onSuccess={(data, ref) => {
         console.log(data);
       }}
-      onFailed={() => {
-        console.log("Inválido");
+      onFailed={(_, ref) => {
+        ref?.current?.querySelectorAll("input")?.forEach((item) => {
+          console.log(item);
+          if (!(item as any).isWrong) {
+            item.placeholder = `${item.placeholder} - O valor antigo está inválido`;
+          }
+          (item as any).isWrong = "true";
+        });
       }}
       className="flex flex-col gap-4"
     >
       <input type="text" name="name" placeholder="Name" />
       <input type="email" name="email" placeholder="Email" />
       <input type="password" name="password" placeholder="Password" />
-      <input type="password" name="confirm-password" placeholder="Confirm Password" />
+      <input
+        type="password"
+        name="confirm-password"
+        placeholder="Confirm Password"
+      />
       <Button>Submit</Button>
     </Form>
   );

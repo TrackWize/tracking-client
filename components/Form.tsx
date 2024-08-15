@@ -73,17 +73,17 @@ export function Form<T extends string>({
         }
 
         if (!valid) {
-          onFailed(formData);
+          onFailed(formData, formRef);
           return;
         }
       }
 
-      onSuccess(formData);
+      onSuccess(formData, formRef);
       formRef.current?.reset();
       return;
     }
 
-    onFailed(formData);
+    onFailed(formData, formRef);
   };
 
   return (
