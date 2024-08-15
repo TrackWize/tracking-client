@@ -20,7 +20,10 @@ type Props<T extends string> = Omit<
   HTMLAttributes<HTMLFormElement>,
   "onSubmit"
 > & {
-  validator: ZodSchema;
+  validator: ZodSchema<Record<T, any>>;
+  additionalRules?: {
+    equals?: Array<[T, T]>;
+  };
   onSuccess(data: FormItems<T>, formRef?: RefObject<HTMLFormElement>): void;
   onFailed(data: FormItems<T>, formRef?: RefObject<HTMLFormElement>): void;
 };
@@ -28,6 +31,7 @@ type Props<T extends string> = Omit<
 export function Form<T extends string>({
   children,
   validator,
+  additionalRules,
   onSuccess,
   onFailed,
   ...props
@@ -57,6 +61,23 @@ export function Form<T extends string>({
     });
 
     if (validator.safeParse(formToValidate).success) {
+      let valid = true;
+
+      if (additionalRules) {
+        if (additionalRules.equals && valid) {
+          additionalRules.equals.forEach((item) => {
+            if (formData[item[0]].value !== formData[item[1]].value) {
+              valid = false;
+            }
+          });
+        }
+
+        if (!valid) {
+          onFailed(formData);
+          return;
+        }
+      }
+
       onSuccess(formData);
       formRef.current?.reset();
       return;
