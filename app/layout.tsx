@@ -20,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Layout>
+        <Header />
         <main className={HankenGrotesk.className}>{children}</main>
       </Layout>
     </html>

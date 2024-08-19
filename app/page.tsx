@@ -15,7 +15,7 @@ export default function Page() {
           <h4>
             Crie seu rastreio com <Highlight>Tracking.com</Highlight>
           </h4>
-          <p className="body-2">
+          <p className={module.header__text}>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
             voluptate deserunt, iusto repudiandae impedit non? Neque, nulla
             atque veritatis labore quod magnam officia ipsa suscipit minima
@@ -32,7 +32,7 @@ export default function Page() {
         />
         <div className={module.header__button}>
           <Button>Sou cliente</Button>
-          <Button>Sou loja</Button>
+          <Button theme="alternative">Sou loja</Button>
         </div>
       </div>
     </div>
