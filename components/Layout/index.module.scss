@@ -1,7 +1,7 @@
 .body {
-  @apply flex flex-col items-center w-svw h-svh overflow-x-hidden bg-blue-200 px-2 sm:px-4 md:px-12 lg:px-48 xl:px-96;
+  @apply flex flex-col items-center w-svw h-svh overflow-x-hidden px-2 sm:px-4 md:px-12 lg:px-48 xl:px-96;
 
   main {
-    @apply flex-1 w-full bg-green-300;
+    @apply flex-1 w-full;
   }
 }

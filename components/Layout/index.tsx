@@ -3,7 +3,7 @@
 import module from "./index.module.scss";
 
 type Props = {
-  children: React.ReactNode;
+  children: JSX.Element[] | JSX.Element;
 };
 
 export function Layout({ children }: Props) {

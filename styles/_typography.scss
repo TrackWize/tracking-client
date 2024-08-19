@@ -1,63 +1,61 @@
-@import "./font-families";
-
 h1,
 .h1 {
-  @apply text-8xl hanken-grotesk font-normal;
+  @apply text-8xl font-normal;
   letter-spacing: -1.5px;
 }
 
 h2,
 .h2 {
-  @apply text-6xl hanken-grotesk font-medium;
+  @apply text-6xl font-medium;
   letter-spacing: -0.5px;
 }
 
 h3,
 .h3 {
-  @apply text-5xl hanken-grotesk font-normal;
+  @apply text-5xl font-normal;
   letter-spacing: 0.20000000298023224px;
 }
 
 h4,
 .h4 {
-  @apply text-3xl hanken-grotesk font-bold;
+  @apply text-3xl font-bold;
   letter-spacing: 0.25px;
 }
 
 h5,
 .h5 {
-  @apply text-2xl hanken-grotesk font-normal;
+  @apply text-2xl font-normal;
 }
 
 h6,
 .h6 {
-  @apply text-lg hanken-grotesk font-bold;
+  @apply text-lg font-bold;
   letter-spacing: 0.15000000596046448px;
 }
 
 body,
 .body-1 {
-  @apply text-base hanken-grotesk font-normal;
+  @apply text-base font-normal;
 }
 
 .body-2 {
-  @apply text-sm hanken-grotesk font-normal;
+  @apply text-base font-light;
 }
 
 .subtitle-1 {
-  @apply text-base font-bold hanken-grotesk;
+  @apply text-base font-bold;
 }
 
 .subtitle-2 {
-  @apply hanken-grotesk text-sm font-medium;
+  @apply text-sm font-medium;
 }
 
 .caption {
-  @apply hanken-grotesk text-xs font-normal;
+  @apply text-xs font-normal;
 }
 
 .overline {
-  @apply hanken-grotesk text-xs font-medium uppercase;
+  @apply text-xs font-medium uppercase;
   letter-spacing: 1px;
   text-decoration-line: none !important;
 }

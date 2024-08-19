@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import "@/styles/globals.scss";
 import { Header, Layout } from "@/components";
+import { Hanken_Grotesk } from "next/font/google";
+
+const HankenGrotesk = Hanken_Grotesk({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -10,12 +15,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: JSX.Element;
 }>) {
   return (
     <html lang="en">
       <Layout>
-        <main>{children}</main>
+        <main className={HankenGrotesk.className}>{children}</main>
       </Layout>
     </html>
   );
