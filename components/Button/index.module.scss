@@ -3,7 +3,7 @@
 .container {
   @apply hover:brightness-105 active:brightness-95;
   @apply font-bold;
-  @apply px-4 py-2 rounded-3xl;
+  @apply px-4 py-2 rounded-2xl;
   @apply duration-300 transition-all;
   border: 2px solid transparent;
 }

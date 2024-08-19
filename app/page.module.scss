@@ -1,5 +1,7 @@
+@import "@/styles/variables";
+
 .container {
-  @apply flex flex-col;
+  @apply flex flex-col gap-8 py-10;
 }
 
 .header {
@@ -16,4 +18,31 @@
   &__button {
     @apply absolute bottom-0 left-0 flex gap-2;
   }
+}
+
+.content {
+  @apply flex flex-col gap-8;
+
+  &__item {
+    @apply flex flex-col gap-4;
+
+    .section {
+      @apply grid grid-cols-1 2xl:grid-cols-3 gap-2;
+
+      &__item {
+        @apply flex flex-col items-center gap-2 text-center;
+
+        svg {
+          @apply text-7xl 2xl:text-8xl;
+        }
+
+        svg > path {
+          fill: $accent;
+          @apply drop-shadow-2xl;
+        }
+      }
+    }
+  }
+  
+
 }
