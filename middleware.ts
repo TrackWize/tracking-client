@@ -7,13 +7,9 @@ export default async function middleware(request: NextRequest) {
     return NextResponse.redirect(baseURL);
   }
 
-  return NextResponse.next({
-    headers: {
-      token: "ABC",
-    },
-  });
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/testing"],
+  matcher: [],
 };
