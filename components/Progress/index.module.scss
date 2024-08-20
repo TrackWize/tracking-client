@@ -1,0 +1,11 @@
+.content {
+  @apply flex items-center justify-center;
+  @apply h-56 w-full px-28 rounded shadow-lg;
+
+  &__status {
+    @apply w-16 h-20;
+    h6 {
+      @apply text-center justify-center;
+    }
+  }
+}

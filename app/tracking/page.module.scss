@@ -1,0 +1,7 @@
+.container {
+  @apply flex flex-col;
+
+  &__progress {
+    @apply flex items-center;
+  }
+}
