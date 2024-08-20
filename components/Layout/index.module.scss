@@ -1,5 +1,5 @@
 .body {
-  @apply flex flex-col gap-8 items-center w-svw h-svh overflow-x-hidden px-2 sm:px-4 md:px-12 lg:px-48 2xl:px-96;
+  @apply flex flex-col gap-8 items-center w-svw h-svh overflow-x-hidden;
 
   main {
     @apply flex-1 w-full;
