@@ -1,18 +1,20 @@
-import { Highlight } from "@/components";
+"use client";
+
+import { Button, Highlight } from "@/components";
 import module from "./page.module.scss";
-import { Progress } from "@/components/Progress/Index";
+import { useDrawer } from "@/hooks";
 
 export default function UserScreen() {
+  const [drawerActive, drawerAction, Component] = useDrawer(<>Hello World</>);
+
   return (
-    <>
-      <div className={module.container}>
-        <h4>
-          Acompanhar <Highlight>rota de entrega</Highlight>
-        </h4>
-        <div className={module.container__progress}>
-          <Progress />
-        </div>
+    <div className={module.container}>
+      {Component}
+      <div className={`${!drawerActive && module.content}`}>
+        <Button className="w-fit h-fit" onClick={drawerAction}>
+          Active
+        </Button>
       </div>
-    </>
+    </div>
   );
 }

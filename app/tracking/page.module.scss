@@ -1,7 +1,10 @@
-.container {
-  @apply flex flex-col;
+@import "@/styles/variables";
 
-  &__progress {
-    @apply flex items-center;
-  }
+.container {
+  @apply flex h-full;
+  background-color: $pure-white;
+}
+
+.content {
+  @apply w-0 md:w-max;
 }
