@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { FLogo } from "../Svg"
 import module from "./index.module.scss"
 
@@ -17,10 +18,10 @@ export function Footer(){
                 </div>
                 <div className={module.font}>
                     <ul>
-                        <li><a href="">Termos de Serviço</a></li>
-                        <li><a href="">Trabalhe Conosco</a></li>
-                        <li><a href="">Sobre nós</a></li>
-                        <li><a href="">FAQ</a></li>
+                        <li><Link href="/">Termos de Serviço</Link></li>
+                        <li><Link href="/">Trabalhe Conosco</Link></li>
+                        <li><Link href="/">Sobre nós</Link></li>
+                        <li><Link href="/">FAQ</Link></li>
                     </ul>
                 </div>
             </div>
