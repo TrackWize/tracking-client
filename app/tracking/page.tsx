@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Highlight } from "@/components";
+import { Highlight } from "@/components";
 import module from "./page.module.scss";
 import { Progress } from "@/components/Progress/Index";
 import {
@@ -9,7 +9,6 @@ import {
   faTruckMoving,
   faWarehouse,
 } from "@fortawesome/pro-solid-svg-icons";
-import { Trace } from "@/components/Trace";
 
 export default function UserScreen() {
   const steps = [
@@ -42,10 +41,10 @@ export default function UserScreen() {
 
   return (
     <div>
+      <h4>
+        Acompanhar <Highlight>rota de entrega</Highlight>
+      </h4>
       <div className={module.container}>
-        <h4>
-          Acompanhar <Highlight>rota de entrega</Highlight>
-        </h4>
         <div className={module.container__progress}>
           <Progress data={steps} currentIndex={4} />
         </div>

@@ -1,17 +1,9 @@
-.dashedLine {
-  display: flex;
-  align-items: center;
+@import "@/styles/variables";
 
-  &__circle {
-    width: 1rem;
-    height: 1rem;
-    background-color: black;
-    border-radius: 50%;
-  }
+.container {
+  @apply mt-10;
 
-  &__dashed {
-    border-top: 2px dashed black;
-    flex-grow: 1;
-    margin: 0 0.5rem;
+  &__progress {
+    @apply px-32;
   }
 }
