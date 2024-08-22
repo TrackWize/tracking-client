@@ -17,6 +17,7 @@
 .step {
   &__icon {
     @apply flex flex-row w-16 h-20;
+    font-size: 2rem;
   }
 
   &__info {

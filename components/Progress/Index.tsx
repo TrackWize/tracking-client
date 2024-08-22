@@ -20,8 +20,8 @@ export function Progress({ data, currentIndex }: Props) {
   return (
     <div className={module.content}>
       {data.map((step, index) => (
-        <>
-          <div className={module.step} key={`step-${index}`}>
+        <React.Fragment key={`step-${index}`}>
+          <div className={module.step}>
             <div
               className={`${module.step__icon} ${
                 currentIndex === index ? module.active : module.default
@@ -31,7 +31,7 @@ export function Progress({ data, currentIndex }: Props) {
                   : ""
               }`}
             >
-              <FontAwesomeIcon icon={step.icon} />
+              <FontAwesomeIcon icon={step.icon} size="xl" />
             </div>
             <div className={module.step__info}>
               <span className={module.step__text}>
@@ -42,8 +42,8 @@ export function Progress({ data, currentIndex }: Props) {
               </span>
             </div>
           </div>
-          {index < data.length - 1 && <Trace />}
-        </>
+          {index < data.length - 1 && <Trace key={`trace-${index}`} />}
+        </React.Fragment>
       ))}
     </div>
   );
