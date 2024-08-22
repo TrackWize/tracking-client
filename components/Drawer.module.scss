@@ -1,0 +1,13 @@
+@import "@/styles/variables";
+
+.content {
+  @apply transition-all duration-300 h-full w-0 overflow-hidden flex flex-col items-center px-0 py-4 gap-12 text-nowrap z-10;
+  background-color: $white;
+
+  box-shadow: 1px 0 0 #0000001a;
+  
+}
+
+.active {
+  @apply w-full md:w-3/6 lg:w-1/4 px-4;
+}
