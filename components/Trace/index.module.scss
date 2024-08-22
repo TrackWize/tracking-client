@@ -1,6 +1,5 @@
 .dashedLine {
-  display: flex;
-  align-items: center;
+  @apply flex items-center w-full px-5;
 
   &__circle {
     width: 1rem;
@@ -10,8 +9,7 @@
   }
 
   &__dashed {
-    border-top: 2px dashed black;
-    flex-grow: 1;
+    @apply border-y-2 border-dashed border-black grow;
     margin: 0 0.5rem;
   }
 }

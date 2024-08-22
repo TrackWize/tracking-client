@@ -1,11 +1,29 @@
-.content {
-  @apply flex items-center justify-center;
-  @apply h-56 w-full px-28 rounded shadow-lg;
+@import "@/styles/variables";
 
-  &__status {
-    @apply w-16 h-20;
-    h6 {
-      @apply text-center justify-center;
-    }
+.content {
+  @apply flex gap-4 items-center justify-center;
+  @apply h-56 w-full rounded shadow-lg px-32;
+}
+.active {
+  color: gray;
+}
+.default {
+  color: black;
+}
+
+.finish {
+  color: $accent;
+}
+.step {
+  &__icon {
+    @apply flex flex-row w-16 h-20;
+  }
+
+  &__info {
+    @apply flex flex-col;
+  }
+
+  &__text {
+    @apply text-sm text-center;
   }
 }
