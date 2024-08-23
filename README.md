@@ -7,4 +7,4 @@
 
 ## Using Technologies
 
-[![My Skills](https://skillicons.dev/icons?i=ts,nextjs,react,bun,,sass,tailwind)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=ts,nextjs,react,bun,sass,tailwind)](https://skillicons.dev)
