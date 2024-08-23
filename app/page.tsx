@@ -10,6 +10,8 @@ import {
   faChartUser,
 } from "@fortawesome/pro-solid-svg-icons";
 import { faAddressCard, faPalette } from "@fortawesome/pro-regular-svg-icons";
+import { Footer } from "@/components/Footer";
+import Link from "next/link";
 
 const SwapperContent = [
   <div className={module.content__item} key="1">
@@ -28,7 +30,9 @@ const SwapperContent = [
         <Highlight>transportadora</Highlight>
       </IconWithDescription>
     </div>
-    <Button className="self-end w-fit">Saiba mais</Button>
+    <Link href={"/tracking"} className="self-end w-fit">
+      <Button>Saiba mais</Button>
+    </Link>
   </div>,
   <div className={module.content__item} key="2">
     <h4>
@@ -52,32 +56,48 @@ export default function Page() {
   const [Component, action, currentIndex] = useSwapper(SwapperContent);
 
   return (
-    <div className={module.container}>
-      <div className={module.header}>
-        <div className={module.header__title}>
-          <h4>
-            Rastreio Fácil com <Highlight>TrackWize</Highlight>
-          </h4>
-          <p className={module.header__text}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-            voluptate deserunt, iusto repudiandae impedit non? Neque, nulla
-            atque veritatis labore quod magnam officia ipsa suscipit minima
-            fugit at, necessitatibus delectus?
-          </p>
+    <>
+      <div className={module.container}>
+        <div className={module.header}>
+          <div className={module.header__title}>
+            <h4>
+              Rastreio Fácil com <Highlight>TrackWize</Highlight>
+            </h4>
+            <p className={module.header__text}>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+              voluptate deserunt, iusto repudiandae impedit non? Neque, nulla
+              atque veritatis labore quod magnam officia ipsa suscipit minima
+              fugit at, necessitatibus delectus?
+            </p>
+          </div>
+          <Image
+            src={"/public/home.png"}
+            alt="Teste"
+            width={488}
+            height={400}
+            quality={75}
+          />
+          <div className={module.header__button}>
+            <Button
+              theme={currentIndex === 0 ? "filled" : "alternative"}
+              onClick={() => {
+                action(false);
+              }}
+            >
+              Sou cliente
+            </Button>
+            <Button
+              theme={currentIndex === 1 ? "filled" : "alternative"}
+              onClick={() => {
+                action(true);
+              }}
+            >
+              Sou loja
+            </Button>
+          </div>
         </div>
-        <Image
-          src={"/public/home.png"}
-          alt="Teste"
-          width={488}
-          height={400}
-          quality={75}
-        />
-        <div className={module.header__button}>
-          <Button theme={currentIndex === 0 ? "filled" : "alternative"} onClick={() => { action(false) }}>Sou cliente</Button>
-          <Button theme={currentIndex === 1 ? "filled" : "alternative"} onClick={() => { action(true) }}>Sou loja</Button>
-        </div>
-      </div>
       <div className={module.content}>{Component}</div>
-    </div>
+      </div>
+    </>
   );
 }
