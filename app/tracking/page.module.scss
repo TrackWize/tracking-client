@@ -1,7 +1,9 @@
+@import "@/styles/variables";
+
 .container {
-  @apply flex flex-col;
+  @apply mt-10;
 
   &__progress {
-    @apply flex items-center;
+    @apply px-32;
   }
 }

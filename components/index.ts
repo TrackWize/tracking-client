@@ -5,3 +5,4 @@ export { Header } from "./Header";
 export { Highlight } from "./Highlight";
 export { IconWithDescription } from "./IconWithDescription";
 export { Swapper } from "./Swapper";
+export { Drawer } from "./Drawer";
