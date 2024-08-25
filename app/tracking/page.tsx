@@ -1,6 +1,6 @@
 "use client";
 
-import { Highlight } from "@/components";
+import { Button, Highlight } from "@/components";
 import module from "./page.module.scss";
 import { Progress } from "@/components/Progress/Index";
 import {
@@ -9,8 +9,12 @@ import {
   faTruckMoving,
   faWarehouse,
 } from "@fortawesome/pro-solid-svg-icons";
+import { useDrawer } from "@/hooks";
 
 export default function UserScreen() {
+
+  const [drawerActive, drawerAction, Component] = useDrawer(<>Hello World</>);
+
   const steps = [
     {
       icon: faWarehouse,
@@ -40,11 +44,12 @@ export default function UserScreen() {
   ];
 
   return (
-    <div>
-      <h4>
-        Acompanhar <Highlight>rota de entrega</Highlight>
-      </h4>
-      <div className={module.container}>
+    <div className={module.container}>
+      {Component}
+      <div className={`${!drawerActive && module.content}`}>
+        <Button className="w-fit h-fit" onClick={drawerAction}>
+          Active
+        </Button>
         <div className={module.container__progress}>
           <Progress data={steps} currentIndex={4} />
         </div>
