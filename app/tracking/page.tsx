@@ -44,6 +44,7 @@ export default function UserScreen() {
   ];
 
   return (
+    
     <div className={module.container}>
       {Component}
       <div className={`${!drawerActive && module.content}`}>
