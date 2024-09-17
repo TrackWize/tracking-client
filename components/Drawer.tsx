@@ -12,6 +12,7 @@ export function Drawer({ active, children }: Props) {
 
   return (
     <div
+      
       className={`${module.content} ${!active && module.active}`}
     >
       {children}
