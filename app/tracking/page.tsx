@@ -1,8 +1,7 @@
 "use client";
 
-import { Button, Highlight } from "@/components";
-import module from "./page.module.scss";
-import { Progress } from "@/components/Progress/Index";
+import { Button } from "@/components";
+import { Progress } from "@/components/Progress";
 import {
   faBoxOpen,
   faTruck,
@@ -12,7 +11,6 @@ import {
 import { useDrawer } from "@/hooks";
 
 export default function UserScreen() {
-
   const [drawerActive, drawerAction, Component] = useDrawer(<>Hello World</>);
 
   const steps = [
@@ -44,13 +42,16 @@ export default function UserScreen() {
   ];
 
   return (
-    <div className={module.container}>
+    <div className="flex">
       {Component}
-      <div className={`${!drawerActive && module.content}`}>
+      <div
+        data-active={!drawerActive}
+        className="data-[active=true]:flex data-[active=true]:flex-col data-[active=true]:flex-1"
+      >
         <Button className="w-fit h-fit" onClick={drawerAction}>
           Active
         </Button>
-        <div className={module.container__progress}>
+        <div className="px-32">
           <Progress data={steps} currentIndex={4} />
         </div>
       </div>
