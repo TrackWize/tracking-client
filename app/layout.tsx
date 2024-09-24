@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import "@/styles/globals.scss";
 import { Header, Layout } from "@/components";
 import { Hanken_Grotesk } from "next/font/google";
-import { Footer } from "@/components/Footer";
+import "./globals.css";
 
 const HankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -25,7 +24,6 @@ export default function RootLayout({
       <Layout>
         <Header />
         <main className={HankenGrotesk.className}>{children}</main>
-        <Footer />
       </Layout>
     </html>
   );

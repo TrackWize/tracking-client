@@ -2,7 +2,6 @@
 
 import { Button, Highlight, IconWithDescription } from "@/components";
 import { useDictionary, useSwapper } from "@/hooks";
-import module from "./page.module.scss";
 import Image from "next/image";
 import {
   faTruck,
@@ -10,15 +9,14 @@ import {
   faChartUser,
 } from "@fortawesome/pro-solid-svg-icons";
 import { faAddressCard, faPalette } from "@fortawesome/pro-regular-svg-icons";
-import { Footer } from "@/components/Footer";
 import Link from "next/link";
 
 const SwapperContent = [
-  <div className={module.content__item} key="1">
+  <div className="flex flex-col gap-4" key="1">
     <h4>
       Para <Highlight>cliente</Highlight>
     </h4>
-    <div className={module.section}>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
       <IconWithDescription icon={faTruck}>
         Comprou? <Highlight>Acompanhou</Highlight>
       </IconWithDescription>
@@ -34,13 +32,16 @@ const SwapperContent = [
       <Button>Saiba mais</Button>
     </Link>
   </div>,
-  <div className={module.content__item} key="2">
+  <div className="flex flex-col gap-4" key="2">
     <h4>
       Para <Highlight>loja</Highlight>
     </h4>
-    <div className={module.section}>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
       <IconWithDescription icon={faPalette}>
         Deseja mudar a interface padrão? <Highlight>Customize</Highlight>
+      </IconWithDescription>
+      <IconWithDescription icon={faChartUser}>
+        Gerencie os seus envios com <Highlight>facilidade</Highlight>
       </IconWithDescription>
       <IconWithDescription icon={faChartUser}>
         Gerencie os seus envios com <Highlight>facilidade</Highlight>
@@ -57,13 +58,13 @@ export default function Page() {
 
   return (
     <>
-      <div className={module.container}>
-        <div className={module.header}>
-          <div className={module.header__title}>
+      <div className="flex flex-col gap-8 py-10 px-2 sm:px-4 md:px-12 lg:px-48 2xl:px-96">
+        <div className="relative flex justify-end overflow-visible">
+          <div className="absolute top-0 left-0 flex flex-col gap-2 w-4/6">
             <h4>
               Rastreio Fácil com <Highlight>TrackWize</Highlight>
             </h4>
-            <p className={module.header__text}>
+            <p className="font-medium text-lg">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
               voluptate deserunt, iusto repudiandae impedit non? Neque, nulla
               atque veritatis labore quod magnam officia ipsa suscipit minima
@@ -77,7 +78,7 @@ export default function Page() {
             height={400}
             quality={75}
           />
-          <div className={module.header__button}>
+          <div className="absolute bottom-0 left-0 flex gap-2">
             <Button
               theme={currentIndex === 0 ? "filled" : "alternative"}
               onClick={() => {
@@ -96,7 +97,7 @@ export default function Page() {
             </Button>
           </div>
         </div>
-      <div className={module.content}>{Component}</div>
+        <div className="flex flex-col gap-8">{Component}</div>
       </div>
     </>
   );
