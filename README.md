@@ -5,6 +5,6 @@
   
 ---
 
-## Using Technologies
+## Technologies we use
 
 [![My Skills](https://skillicons.dev/icons?i=ts,nextjs,react,bun,sass,tailwind)](https://skillicons.dev)
